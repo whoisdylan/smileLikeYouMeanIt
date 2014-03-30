@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC31468C18E794AC00C99C68 /* WHOMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC31468A18E794AC00C99C68 /* WHOMainViewController.m */; };
+		FC31468D18E794AC00C99C68 /* WHOMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC31468B18E794AC00C99C68 /* WHOMainViewController.xib */; };
 		FCC897AB18E7918B00D63803 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC897AA18E7918B00D63803 /* Foundation.framework */; };
 		FCC897AD18E7918B00D63803 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC897AC18E7918B00D63803 /* CoreGraphics.framework */; };
 		FCC897AF18E7918B00D63803 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC897AE18E7918B00D63803 /* UIKit.framework */; };
@@ -32,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC31468918E794AC00C99C68 /* WHOMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHOMainViewController.h; path = ../WHOMainViewController.h; sourceTree = "<group>"; };
+		FC31468A18E794AC00C99C68 /* WHOMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHOMainViewController.m; path = ../WHOMainViewController.m; sourceTree = "<group>"; };
+		FC31468B18E794AC00C99C68 /* WHOMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WHOMainViewController.xib; path = ../WHOMainViewController.xib; sourceTree = "<group>"; };
 		FCC897A718E7918B00D63803 /* smileLikeYouMeanIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smileLikeYouMeanIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC897AA18E7918B00D63803 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FCC897AC18E7918B00D63803 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -107,6 +112,9 @@
 		FCC897B018E7918B00D63803 /* smileLikeYouMeanIt */ = {
 			isa = PBXGroup;
 			children = (
+				FC31468918E794AC00C99C68 /* WHOMainViewController.h */,
+				FC31468A18E794AC00C99C68 /* WHOMainViewController.m */,
+				FC31468B18E794AC00C99C68 /* WHOMainViewController.xib */,
 				FCC897B918E7918B00D63803 /* WHOAppDelegate.h */,
 				FCC897BA18E7918B00D63803 /* WHOAppDelegate.m */,
 				FCC897BC18E7918B00D63803 /* Images.xcassets */,
@@ -220,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC31468D18E794AC00C99C68 /* WHOMainViewController.xib in Resources */,
 				FCC897B518E7918B00D63803 /* InfoPlist.strings in Resources */,
 				FCC897BD18E7918B00D63803 /* Images.xcassets in Resources */,
 			);
@@ -241,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCC897B718E7918B00D63803 /* main.m in Sources */,
+				FC31468C18E794AC00C99C68 /* WHOMainViewController.m in Sources */,
 				FCC897BB18E7918B00D63803 /* WHOAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +371,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "smileLikeYouMeanIt/smileLikeYouMeanIt-Prefix.pch";
 				INFOPLIST_FILE = "smileLikeYouMeanIt/smileLikeYouMeanIt-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -374,6 +385,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "smileLikeYouMeanIt/smileLikeYouMeanIt-Prefix.pch";
 				INFOPLIST_FILE = "smileLikeYouMeanIt/smileLikeYouMeanIt-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -438,6 +450,7 @@
 				FCC897D518E7918B00D63803 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCC897D618E7918B00D63803 /* Build configuration list for PBXNativeTarget "smileLikeYouMeanItTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +459,7 @@
 				FCC897D818E7918B00D63803 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
