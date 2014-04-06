@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		FC31468C18E794AC00C99C68 /* WHOMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC31468A18E794AC00C99C68 /* WHOMainViewController.m */; };
 		FC31468D18E794AC00C99C68 /* WHOMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC31468B18E794AC00C99C68 /* WHOMainViewController.xib */; };
+		FC31469A18E7B6B100C99C68 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC31469518E7B4DA00C99C68 /* libGPUImage.a */; };
+		FC31469C18E7B6D100C99C68 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC31469B18E7B6D100C99C68 /* CoreMedia.framework */; };
+		FC31469E18E7B6D800C99C68 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC31469D18E7B6D800C99C68 /* CoreVideo.framework */; };
+		FC3146A018E7B6E100C99C68 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC31469F18E7B6E100C99C68 /* OpenGLES.framework */; };
+		FC3146A218E7B6E700C99C68 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3146A118E7B6E700C99C68 /* AVFoundation.framework */; };
+		FC3146A418E7B6EF00C99C68 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3146A318E7B6EF00C99C68 /* QuartzCore.framework */; };
 		FCC897AB18E7918B00D63803 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC897AA18E7918B00D63803 /* Foundation.framework */; };
 		FCC897AD18E7918B00D63803 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC897AC18E7918B00D63803 /* CoreGraphics.framework */; };
 		FCC897AF18E7918B00D63803 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC897AE18E7918B00D63803 /* UIKit.framework */; };
@@ -24,6 +30,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FC31469418E7B4DA00C99C68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC31468E18E7B4D900C99C68 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		FC31469618E7B4DA00C99C68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC31468E18E7B4D900C99C68 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A34414DDB1EC00852800;
+			remoteInfo = GPUImageTests;
+		};
+		FC31469818E7B68A00C99C68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC31468E18E7B4D900C99C68 /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCF1A33314DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
 		FCC897C718E7918B00D63803 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FCC8979F18E7918A00D63803 /* Project object */;
@@ -37,6 +64,12 @@
 		FC31468918E794AC00C99C68 /* WHOMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHOMainViewController.h; path = ../WHOMainViewController.h; sourceTree = "<group>"; };
 		FC31468A18E794AC00C99C68 /* WHOMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHOMainViewController.m; path = ../WHOMainViewController.m; sourceTree = "<group>"; };
 		FC31468B18E794AC00C99C68 /* WHOMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WHOMainViewController.xib; path = ../WHOMainViewController.xib; sourceTree = "<group>"; };
+		FC31468E18E7B4D900C99C68 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = ../GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
+		FC31469B18E7B6D100C99C68 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		FC31469D18E7B6D800C99C68 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		FC31469F18E7B6E100C99C68 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		FC3146A118E7B6E700C99C68 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FC3146A318E7B6EF00C99C68 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FCC897A718E7918B00D63803 /* smileLikeYouMeanIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smileLikeYouMeanIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC897AA18E7918B00D63803 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FCC897AC18E7918B00D63803 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,6 +93,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC3146A418E7B6EF00C99C68 /* QuartzCore.framework in Frameworks */,
+				FC3146A218E7B6E700C99C68 /* AVFoundation.framework in Frameworks */,
+				FC3146A018E7B6E100C99C68 /* OpenGLES.framework in Frameworks */,
+				FC31469E18E7B6D800C99C68 /* CoreVideo.framework in Frameworks */,
+				FC31469C18E7B6D100C99C68 /* CoreMedia.framework in Frameworks */,
+				FC31469A18E7B6B100C99C68 /* libGPUImage.a in Frameworks */,
 				FCC897AD18E7918B00D63803 /* CoreGraphics.framework in Frameworks */,
 				FCC897AF18E7918B00D63803 /* UIKit.framework in Frameworks */,
 				FCC897AB18E7918B00D63803 /* Foundation.framework in Frameworks */,
@@ -79,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC31468F18E7B4D900C99C68 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC31469518E7B4DA00C99C68 /* libGPUImage.a */,
+				FC31469718E7B4DA00C99C68 /* GPUImageTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FCC8979E18E7918A00D63803 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +134,7 @@
 				FCC897C918E7918B00D63803 /* smileLikeYouMeanItTests */,
 				FCC897A918E7918B00D63803 /* Frameworks */,
 				FCC897A818E7918B00D63803 /* Products */,
+				FC31468E18E7B4D900C99C68 /* GPUImage.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +150,11 @@
 		FCC897A918E7918B00D63803 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC3146A318E7B6EF00C99C68 /* QuartzCore.framework */,
+				FC3146A118E7B6E700C99C68 /* AVFoundation.framework */,
+				FC31469F18E7B6E100C99C68 /* OpenGLES.framework */,
+				FC31469D18E7B6D800C99C68 /* CoreVideo.framework */,
+				FC31469B18E7B6D100C99C68 /* CoreMedia.framework */,
 				FCC897AA18E7918B00D63803 /* Foundation.framework */,
 				FCC897AC18E7918B00D63803 /* CoreGraphics.framework */,
 				FCC897AE18E7918B00D63803 /* UIKit.framework */,
@@ -166,6 +220,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				FC31469918E7B68A00C99C68 /* PBXTargetDependency */,
 			);
 			name = smileLikeYouMeanIt;
 			productName = smileLikeYouMeanIt;
@@ -215,6 +270,12 @@
 			mainGroup = FCC8979E18E7918A00D63803;
 			productRefGroup = FCC897A818E7918B00D63803 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FC31468F18E7B4D900C99C68 /* Products */;
+					ProjectRef = FC31468E18E7B4D900C99C68 /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FCC897A618E7918B00D63803 /* smileLikeYouMeanIt */,
@@ -222,6 +283,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FC31469518E7B4DA00C99C68 /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = FC31469418E7B4DA00C99C68 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC31469718E7B4DA00C99C68 /* GPUImageTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GPUImageTests.octest;
+			remoteRef = FC31469618E7B4DA00C99C68 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FCC897A518E7918B00D63803 /* Resources */ = {
@@ -266,6 +344,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FC31469918E7B68A00C99C68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImage;
+			targetProxy = FC31469818E7B68A00C99C68 /* PBXContainerItemProxy */;
+		};
 		FCC897C818E7918B00D63803 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FCC897A618E7918B00D63803 /* smileLikeYouMeanIt */;
@@ -384,6 +467,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "smileLikeYouMeanIt/smileLikeYouMeanIt-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"~/gits/GPUImage/framework/**",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "smileLikeYouMeanIt/smileLikeYouMeanIt-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
