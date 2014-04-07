@@ -32,14 +32,20 @@
     // Do any additional setup after loading the view from its nib.
     self.videoCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPresetPhoto cameraPosition:AVCaptureDevicePositionFront];
     self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
+    self.videoCamera.horizontallyMirrorFrontFacingCamera = YES;
     
     self.filter = [[GPUImageiOSBlurFilter alloc] init];
+//    self.filter = [[GPUImageBoxBlurFilter alloc] init];
+    [(GPUImageiOSBlurFilter *)self.filter setBlurRadiusInPixels:5.0];
+    [(GPUImageiOSBlurFilter *)self.filter setSaturation:1.15];
+//    [(GPUImageBoxBlurFilter *)self.filter setBlurRadiusInPixels:10.0];
+//    GPUImageOutput<GPUImageInput>* satFilter = [[GPUImageSaturationFilter alloc] init];
 //    self.noFilter = [[GPUImageCropFilter alloc] initWithCropRegion:CGRectMake(0.0, .125, 1.0, .75)];
     self.noFilter = [[GPUImageBrightnessFilter alloc] init];
-    [(GPUImageiOSBlurFilter *)self.filter setBlurRadiusInPixels:1.0];
     [self.videoCamera addTarget:self.filter];
     [self.videoCamera addTarget:self.noFilter];
     GPUImageView* filterView = (GPUImageView *)self.gpuImageView;
+//    [satFilter addTarget:self.filter];
     [self.filter addTarget:filterView];
     
     [self.videoCamera startCameraCapture];
