@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GPUImage.h"
 
 @interface WHOMainViewController : UIViewController
+//{
+//GPUImageStillCamera *videoCamera;
+//GPUImageOutput<GPUImageInput> *filter;
+//}
 @property (strong, nonatomic) IBOutlet UILabel *smileLabel;
-- (IBAction)cameraButton:(UIButton *)sender;
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+//- (IBAction)cameraButton:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet GPUImageView *gpuImageView;
 
 @end
