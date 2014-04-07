@@ -43,7 +43,26 @@
     [self.filter addTarget:filterView];
     
     [self.videoCamera startCameraCapture];
+//    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(processFrame) userInfo:nil repeats:YES];
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(processFrame) userInfo:nil repeats:YES];
+}
+
+- (void)processFrame2 {
+    [self.videoCamera capturePhotoAsSampleBufferWithCompletionHandler:^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
+        CIImage *processedImage = [CIImage imageWithCVPixelBuffer:CMSampleBufferGetImageBuffer(imageSampleBuffer)];
+        //set up smile detector
+        CIContext* context = [CIContext contextWithOptions:nil];
+        CIDetector* smileDetector = [CIDetector detectorOfType:CIDetectorTypeFace context:context options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
+        //note: use orientation 5 for regular camera images
+        NSArray* features = [smileDetector featuresInImage:processedImage options:@{CIDetectorSmile:@YES, CIDetectorImageOrientation:@1}];
+        //        NSLog(@"number of features = %lu", (unsigned long)[features count]);
+        if (([features count] > 0) && (((CIFaceFeature *) features[0]).hasSmile)) {
+            self.smileLabel.text = @":]";
+        }
+        else {
+            self.smileLabel.text = @":[";
+        }
+    }];
 }
 
 - (void)processFrame {
@@ -54,7 +73,7 @@
         CIDetector* smileDetector = [CIDetector detectorOfType:CIDetectorTypeFace context:context options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
         //note: use orientation 5 for regular camera images
         NSArray* features = [smileDetector featuresInImage:[CIImage imageWithCGImage:[processedImage CGImage]] options:@{CIDetectorSmile:@YES, CIDetectorImageOrientation:@1}];
-        NSLog(@"number of features = %lu", (unsigned long)[features count]);
+//        NSLog(@"number of features = %lu", (unsigned long)[features count]);
         if (([features count] > 0) && (((CIFaceFeature *) features[0]).hasSmile)) {
             self.smileLabel.text = @":]";
         }
