@@ -43,18 +43,18 @@
     [self.filter addTarget:filterView];
     
     [self.videoCamera startCameraCapture];
-//    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(processFrame) userInfo:nil repeats:YES];
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(processFrame) userInfo:nil repeats:YES];
 }
 
 - (void)processFrame2 {
-    [self.videoCamera capturePhotoAsSampleBufferWithCompletionHandler:^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
-        CIImage *processedImage = [CIImage imageWithCVPixelBuffer:CMSampleBufferGetImageBuffer(imageSampleBuffer)];
+    [self.noFilter useNextFrameForImageCapture];
+    UIImage *processedImage = [self.noFilter imageFromCurrentFramebuffer];
+    [self.videoCamera pauseCameraCapture];
         //set up smile detector
         CIContext* context = [CIContext contextWithOptions:nil];
         CIDetector* smileDetector = [CIDetector detectorOfType:CIDetectorTypeFace context:context options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
         //note: use orientation 5 for regular camera images
-        NSArray* features = [smileDetector featuresInImage:processedImage options:@{CIDetectorSmile:@YES, CIDetectorImageOrientation:@1}];
+    NSArray* features = [smileDetector featuresInImage:[CIImage imageWithCGImage:[processedImage CGImage]] options:@{CIDetectorSmile:@YES, CIDetectorImageOrientation:@1}];
         //        NSLog(@"number of features = %lu", (unsigned long)[features count]);
         if (([features count] > 0) && (((CIFaceFeature *) features[0]).hasSmile)) {
             self.smileLabel.text = @":]";
@@ -62,24 +62,32 @@
         else {
             self.smileLabel.text = @":[";
         }
-    }];
+    [self.videoCamera resumeCameraCapture];
 }
 
 - (void)processFrame {
     [self.videoCamera capturePhotoAsImageProcessedUpToFilter:self.noFilter withCompletionHandler:^(UIImage *processedImage, NSError *error){
         
-        //set up smile detector
-        CIContext* context = [CIContext contextWithOptions:nil];
-        CIDetector* smileDetector = [CIDetector detectorOfType:CIDetectorTypeFace context:context options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
-        //note: use orientation 5 for regular camera images
-        NSArray* features = [smileDetector featuresInImage:[CIImage imageWithCGImage:[processedImage CGImage]] options:@{CIDetectorSmile:@YES, CIDetectorImageOrientation:@1}];
-//        NSLog(@"number of features = %lu", (unsigned long)[features count]);
-        if (([features count] > 0) && (((CIFaceFeature *) features[0]).hasSmile)) {
-            self.smileLabel.text = @":]";
-        }
-        else {
-            self.smileLabel.text = @":[";
-        }
+        //set up background thread
+        dispatch_queue_t backgroundQueue = dispatch_queue_create("backgroundQueue", 0);
+        
+        dispatch_async(backgroundQueue, ^{
+            //set up smile detector
+            CIContext* context = [CIContext contextWithOptions:nil];
+            CIDetector* smileDetector = [CIDetector detectorOfType:CIDetectorTypeFace context:context options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
+            //note: use orientation 5 for regular camera images
+            NSArray* features = [smileDetector featuresInImage:[CIImage imageWithCGImage:[processedImage CGImage]] options:@{CIDetectorSmile:@YES, CIDetectorImageOrientation:@1}];
+            //        NSLog(@"number of features = %lu", (unsigned long)[features count]);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (([features count] > 0) && (((CIFaceFeature *) features[0]).hasSmile)) {
+                    self.smileLabel.text = @":]";
+                }
+                else {
+                    self.smileLabel.text = @":[";
+                }
+            });
+
+        });
         
         //to save image:
 //        NSData *dataForPNGFile = UIImageJPEGRepresentation(processedImage, 0.8);
